@@ -11,3 +11,18 @@ sudo apt install apache2 -y
 
 echo 'Install or Update PHP'
 sudo apt install php libapache2-mod-php -y
+
+echo 'Go to html root'
+cd /var/www/html
+
+echo 'Remove defauld index.htm'
+sudo rm index.html
+
+if 
+	git clone --depth=1 https://github.com/MichMich/PauseMouse/SmartMirror.git; 
+then
+	echo 'Cloned to ' $(pwd);
+else
+	echo 'Unable to install'
+	exit;
+fi
