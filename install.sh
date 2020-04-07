@@ -15,11 +15,15 @@ sudo apt install php libapache2-mod-php -y
 echo 'Go to html root'
 cd /var/www/html
 
+# start fixup permissions
+sudo chmod -R 777 $(pwd)
+# end fixup permissions
+
 echo 'Remove defauld index.htm'
 sudo rm index.html
 
 if 
-	git clone --depth=1 https://github.com/MichMich/PauseMouse/SmartMirror.git; 
+	git clone --depth=1 https://github.com/PauseMouse/SmartMirror.git;
 then
 	echo 'Cloned to ' $(pwd);
 else
