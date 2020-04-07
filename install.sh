@@ -6,5 +6,8 @@ echo 'Hello World!'
 echo 'Check for updatable packages'
 sudo apt update
 
-echo 'Intall Apache2'
+echo 'Intall or Update Apache2'
 sudo apt install apache2 -y
+
+echo 'Install or Update PHP'
+sudo apt install php libapache2-mod-php -y
