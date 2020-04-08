@@ -34,3 +34,16 @@ else
 	echo 'Unable to install'
 	exit;
 fi
+
+# load chromium after boot and open the smartmirror website in full screen mode
+mkdir -p /home/pi/.config/lxsession/LXDE-pi/
+cd /home/pi/.config/lxsession/LXDE-pi/
+
+#echo "@xset s off" > autostart
+#echo "@xset -dpms" > autostart
+#echo "@xset s noblank" > autostart
+echo "@chromium --kiosk localhost" > autostart
+# load chromium after boot and open the smartmirror website in full screen mode
+
+echo "reboot"
+reboot
