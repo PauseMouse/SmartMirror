@@ -19,21 +19,22 @@ sudo chmod -R 777 $(pwd)
 echo 'Remove defauld index.htm'
 sudo rm index.html
 
-if [[ -d "/var/www/html/SmartMirror/" ]]
-then
 if 
-	git clone --depth=1 https://github.com/PauseMouse/SmartMirror.git;
+	[[ -d "/var/www/html/SmartMirror/" ]]
 then
-	echo 'Cloned to ' $(pwd);
-
-	echo 'Copy files from ' $(pwd)/SmartMirror/ ' to ' $(pwd)
-	cp -v $(pwd)/SmartMirror/* $(pwd)
-else
-	echo 'Unable to install'
-	exit;
-fi
-else
 	bash update.sh
+else
+	if
+		git clone --depth=1 https://github.com/PauseMouse/SmartMirror.git;
+	then
+		echo 'Cloned to ' $(pwd);
+
+		echo 'Copy files from ' $(pwd)/SmartMirror/ ' to ' $(pwd)
+		cp -v $(pwd)/SmartMirror/* $(pwd)
+	else
+		echo 'Unable to install'
+		exit;
+	fi
 fi
 
 echo 'Copy new install.sh to /home/pi/'
