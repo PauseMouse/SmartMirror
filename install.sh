@@ -35,6 +35,9 @@ else
 	exit;
 fi
 
+echo 'Copy new install.sh to /home/pi/'
+cp $(pwd)/install.sh /home/pi/
+
 # load chromium after boot and open the smartmirror website in full screen mode
 mkdir -p /home/pi/.config/lxsession/LXDE-pi/
 cd /home/pi/.config/lxsession/LXDE-pi/
