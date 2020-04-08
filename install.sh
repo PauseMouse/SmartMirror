@@ -26,6 +26,10 @@ if
 	git clone --depth=1 https://github.com/PauseMouse/SmartMirror.git;
 then
 	echo 'Cloned to ' $(pwd);
+
+	echo 'Moving files from ' $(pwd)/SmartMirror/ ' to ' $(pwd)
+	mv -v $(pwd)/SmartMirror/* $(pwd)
+	rm -rf $(pwd)/SmartMirror/
 else
 	echo 'Unable to install'
 	exit;
