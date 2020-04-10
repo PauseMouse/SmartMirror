@@ -39,7 +39,7 @@ fi
 
 echo 'Fix rewrite rules'
 sudo chmod -R 777 /etc/apache2/sites-available/000-default.conf
-cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.conf
+cp $(pwd)/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 echo 'Copy new install.sh to /home/pi/'
 cp $(pwd)/install.sh /home/pi/
