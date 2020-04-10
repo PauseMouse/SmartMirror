@@ -37,6 +37,10 @@ else
 	fi
 fi
 
+echo 'Fix rewrite rules'
+sudo chmod -R 777 /etc/apache2/sites-available/000-default.conf
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.conf
+
 echo 'Copy new install.sh to /home/pi/'
 cp $(pwd)/install.sh /home/pi/
 
@@ -62,13 +66,18 @@ fi
 #schedule update task
 
 # load chromium after boot and open the smartmirror website in full screen mode
-mkdir -p /home/pi/.config/lxsession/LXDE-pi/
-cd /home/pi/.config/lxsession/LXDE-pi/
+echo 'Just press [Enter] if you do not know what option is best.'
+read -p "Do you want auto start SmartMirror in full screen? (Y/N default Y)? " choice
+choice="${choice:-Y}"
+if [[ $choice =~ ^[Yy]$ ]]; then
+	mkdir -p /home/pi/.config/lxsession/LXDE-pi/
+	cd /home/pi/.config/lxsession/LXDE-pi/
 
-#echo "@xset s off" > autostart
-#echo "@xset -dpms" > autostart
-#echo "@xset s noblank" > autostart
-echo "@chromium --kiosk localhost" > autostart
+	#echo "@xset s off" > autostart
+	#echo "@xset -dpms" > autostart
+	#echo "@xset s noblank" > autostart
+	echo "@chromium --kiosk localhost" > autostart
+fi
 # load chromium after boot and open the smartmirror website in full screen mode
 
 echo "reboot"
