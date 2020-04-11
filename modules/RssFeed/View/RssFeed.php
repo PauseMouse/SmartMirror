@@ -32,7 +32,7 @@
 <body>
 	<div id="rssDiv"></div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../Modules/RssFeed/js/FeedEk.js"></script>
+	<script type="text/javascript" src="../modules/RssFeed/js/FeedEk.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
        		$('#rssDiv').FeedEk({

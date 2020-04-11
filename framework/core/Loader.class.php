@@ -24,7 +24,7 @@
             }
             else
             {
-                include_once MODULES_PATH . $moduleName . DIRECTORY_SEPARATOR . "view" . DIRECTORY_SEPARATOR . "$view.php";
+                include_once MODULES_PATH . $moduleName . DIRECTORY_SEPARATOR . "View" . DIRECTORY_SEPARATOR . "$view.php";
             }
         }
     }

@@ -38,8 +38,11 @@ else
 fi
 
 echo 'Fix rewrite rules'
+sudo a2enmod rewrite
+sudo systemctl restart apache2
 sudo chmod -R 777 /etc/apache2/sites-available/000-default.conf
 cp $(pwd)/000-default.conf /etc/apache2/sites-available/000-default.conf
+sudo systemctl restart apache2
 
 echo 'Copy new install.sh to /home/pi/'
 cp $(pwd)/install.sh /home/pi/
