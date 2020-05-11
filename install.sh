@@ -73,13 +73,18 @@ echo 'Just press [Enter] if you do not know what option is best.'
 read -p "Do you want auto start SmartMirror in full screen? (Y/N default Y)? " choice
 choice="${choice:-Y}"
 if [[ $choice =~ ^[Yy]$ ]]; then
+
+	echo 'Install unclutter to hide the cursor'
+	sudo apt install unclutter 
+	
+	echo 'Start chromium in kiosk mode'
 	mkdir -p /home/pi/.config/lxsession/LXDE-pi/
 	cd /home/pi/.config/lxsession/LXDE-pi/
 
 	#echo "@xset s off" > autostart
 	#echo "@xset -dpms" > autostart
 	#echo "@xset s noblank" > autostart
-	echo "@chromium --kiosk localhost" > autostart
+	echo "@chromium --kiosk localhost/SmartMirror" > autostart
 fi
 # load chromium after boot and open the smartmirror website in full screen mode
 

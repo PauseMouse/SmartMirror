@@ -8,26 +8,27 @@
 <link href="https://gadgets.buienradar.nl/gadgets/forecastandstation/styles.css" rel="stylesheet">
 <style>
  body {
-	background-color: #000; !important;
+	background-color: #000 !important;
  }
  .container{
 	margin-top: 16px;
+	margin-left: 17px;
  }
  .header 
  {
-	background-color: #000; !important;
+	background-color: #000 !important;
  }
  .inner 
  {
-	background-color: #000; !important;
+	background-color: #000 !important;
 	border: 0px solid #000;
  }
  .even .cell
  {
-	background-color: #000; !important;
+	background-color: #000 !important;
  }
  .cell{
-	background-color: #000; !important;
+	background-color: #000 !important;
  }
  a {
 	color: #fff !important;
@@ -46,8 +47,7 @@
 </script>
 </head>
 <body>
-	<div class="container">
-	</div>
+	<div class="container"></div>
 </body>
 </body>
 </html>
